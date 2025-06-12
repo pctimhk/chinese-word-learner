@@ -12,6 +12,27 @@
       margin: 1rem; 
       cursor: pointer;
     }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 100;
+    }
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 2rem;
+      width: 60%;
+      max-width: 500px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    #modal-word { font-size: 4em; margin: 1rem 0; }
+    .modal-buttons { margin-top: 1.5rem; }
   </style>
 </head>
 <body>
@@ -20,6 +41,18 @@
   <button id="correct-btn">Correct</button>
   <button id="wrong-btn">Wrong</button>
   <p><a href="stats.html">View Statistics</a></p>
+
+  <!-- Wrong Answer Modal -->
+  <div id="wrong-modal" class="modal">
+    <div class="modal-content">
+      <h2>Correct Pronunciation</h2>
+      <div id="modal-word"></div>
+      <div class="modal-buttons">
+        <button id="speak-btn">Speak Again</button>
+        <button id="next-btn">Next Word</button>
+      </div>
+    </div>
+  </div>
 
   <script src="scripts/learn.js"></script>
 </body>
